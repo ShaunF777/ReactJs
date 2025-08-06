@@ -19,7 +19,7 @@ function App() {
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <a href="https://scrimba.com/home" target="_blank">
+        <a href="https://scrimba.com" target="_blank">
           <img src={scrimbaLogo} className="logo scrimba" alt="Scrimba logo" />
         </a>
       </div>
