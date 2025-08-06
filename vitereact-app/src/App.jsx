@@ -43,6 +43,11 @@ function App() {
         console.log(err.message)
       }
     }
+    /*The API (api.ipify.org) is reliable, but if you are offline, blocked by a firewall, or the API is down, 
+    it will show "NOT AVAILABLE" as expected. Otherwise, it should display your public IP address.
+    If you still see "NOT AVAILABLE," check your network connection or try opening 
+    https://api.ipify.org?format=json in your browser to verify the API is reachable.
+    */
 
     fetchIpAddress()
   }, []) // Empty dependency array means this runs once on mount
