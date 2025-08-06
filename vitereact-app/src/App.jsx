@@ -2,6 +2,7 @@
 // Import React hooks and assets
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
+import Svgrlogo from './assets/ochair.svg?react' // Capitolise for React component naming convention
 import scrimbaLogo from './assets/2.jpg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -52,8 +53,6 @@ function App() {
     fetchIpAddress()
   }, []) // Empty dependency array means this runs once on mount
 
-
-
   return (
     <>
       {/* Header component */}
@@ -70,6 +69,9 @@ function App() {
         </a>
         <a href="https://scrimba.com" target="_blank">
           <img src={scrimbaLogo} className="logo react" alt="Scrimba logo" />
+        </a>
+        <a href="https://github.com/pd4d10/vite-plugin-svgr" target="_blank">
+          <Svgrlogo className="logo react" alt="Svgr logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
