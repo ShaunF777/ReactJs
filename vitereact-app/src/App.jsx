@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import scrimbaLogo from './assets/scrimba.png'
+import scrimbaLogo from './assets/2.jpg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header'
@@ -20,7 +20,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
         <a href="https://scrimba.com" target="_blank">
-          <img src={scrimbaLogo} className="logo scrimba" alt="Scrimba logo" />
+          <img src={scrimbaLogo} className="logo react" alt="Scrimba logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
