@@ -109,3 +109,18 @@ const user4 = {
     ...user3};
 console.log(user4); */
 
+// If ,else if and else control
+const password = prompt('Please enter the password');
+if (password === 'Jan') {
+    console.log('Jan works')
+} else if ( password === 'Koos') {
+    console.log('Koos also works')
+} else {
+    console.log('Incorrect Password')
+}
+
+// For loops
+const hobbies = ["pianting", "jogging"];
+for (const hobby of hobbies) {
+    console.log(hobby);
+} 
