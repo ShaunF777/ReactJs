@@ -32,12 +32,12 @@ class User {
 // Then create/populate objects
 const user1 = new User("Manuel", 35);
 console.log(user1);
-user1.greet();
-*/
+user1.greet();*/
 
+/* Arrays/Lists come with many utility methods using object .notation
 const hobbies = ["Sports", "Cooking", "Reading"];
 console.log(hobbies[0])
-hobbies.push("Working")
+hobbies.push("Working") 
 console.log(hobbies)
 const indreading = hobbies.findIndex((item) => {
     return item === "Reading";
@@ -46,13 +46,45 @@ console.log(indreading);
 
 const numbers = [4,8,12,16];
 console.log(numbers[3])
-numbers.push(20)
+numbers.push(20) // add to the back of list
 console.log(numbers)
 const ind4 = numbers.findIndex(item => item === 16);
 console.log(ind4);
 
+//map new list with additions to each value
 const newhobbies = hobbies.map(item => item + " for fun");
 console.log(newhobbies);
 
+//map transforms into new list of key: value ojects 
 const newobjects = hobbies.map(item => ({text: item}));
-console.log(newobjects);
+console.log(newobjects); */
+
+/*
+// Destructuring syntax for arrays or lists
+const user1 = ["shaun","fourie"];
+const userN = user1[0]; // manual destructuring
+const userL = user1[1]; // manual destructuring
+console.log(userN + userL);
+
+const [newUserN, newUserL] = ["shaun","fourie"]; // Destructure inline, pulling out values by order 
+console.log(newUserN + newUserL);
+
+// Destructuring syntax for objects
+const user2 = {
+    name: "Max",
+    age: 34
+};
+const u2N = user2.name; // Manual destructuring
+const u2A = user2.age;  // Manual destructuring
+
+const {name, age} = { // Destructure inline, pulling out values by name 
+    name: "Max",
+    age: 34
+};
+console.log(name + age)
+
+const {name: newname, age: newage} = { // Destructure inline, with alliases
+    name: "Max",
+    age: 34
+};
+console.log(newname + newage) */
