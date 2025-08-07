@@ -109,7 +109,8 @@ const user4 = {
     ...user3};
 console.log(user4); */
 
-// If ,else if and else control
+/*
+//27. If ,else if and else control
 const password = prompt('Please enter the password');
 if (password === 'Jan') {
     console.log('Jan works')
@@ -123,4 +124,97 @@ if (password === 'Jan') {
 const hobbies = ["pianting", "jogging"];
 for (const hobby of hobbies) {
     console.log(hobby);
-} 
+} */
+
+//29. Functions as values 
+function handleTimeout1() {
+    console.log("Timed out");
+}
+
+const handleTimeout2 = () => {
+    console.log("Timed out...again");
+}
+
+setTimeout(handleTimeout1,2000);
+setTimeout(handleTimeout2,4000);
+setTimeout(() => {
+    console.log("Timed out one more time")
+},6000);
+
+// Get the output container element
+        const outputDiv = document.getElementById('output');
+
+        // --- 1. Named Function Declaration ---
+        // This is a standard function declaration.
+        // It can be passed by its name, just like a variable.
+        function showMessage(message) {
+            console.log(`Named function: ${message}`);
+            const p = document.createElement('p');
+            p.textContent = `Named function: ${message}`;
+            outputDiv.appendChild(p);
+        }
+
+        // --- 2. Named Arrow Function ---
+        // A modern, concise way to declare a function.
+        // It's assigned to a constant, so it also has a name.
+        const showStyledMessage = (message) => {
+            console.log(`Arrow function (named): ${message}`);
+            const p = document.createElement('p');
+            p.textContent = `Arrow function (named): ${message}`;
+            p.classList.add('font-semibold', 'text-blue-600');
+            outputDiv.appendChild(p);
+        };
+        
+        // --- 3. The "Higher-Order" Function ---
+        // This function takes another function as an argument, called 'callback'.
+        // It performs an action and then "calls back" the provided function.
+        function processData(data, callback) {
+            console.log("Processing data...");
+            // Simulate some work
+            const processedString = `The processed data is: ${data.toUpperCase()}`;
+            // Now we call the function that was passed in!
+            callback(processedString);
+        }
+        
+        // --- Examples of passing functions as values ---
+        
+        // Example 1: Passing the named function 'showMessage'
+        // We pass the function name 'showMessage' without parentheses.
+        // The 'processData' function will call it later.
+        setTimeout(() => {
+            console.log("--- Calling processData with named function (showMessage) ---");
+            processData("hello world", showMessage);
+        }, 1000);
+        
+        // Example 2: Passing the named arrow function 'showStyledMessage'
+        // Just like the named function, we pass its constant name.
+        setTimeout(() => {
+            console.log("--- Calling processData with named arrow function (showStyledMessage) ---");
+            processData("javascript is fun", showStyledMessage);
+        }, 3000);
+
+        // Example 3: Passing an anonymous function expression directly
+        // This function has no name and is defined right inside the argument list.
+        setTimeout(() => {
+            console.log("--- Calling processData with anonymous function expression ---");
+            processData("inline function", function(message) {
+                console.log(`Anonymous function expression: ${message}`);
+                const p = document.createElement('p');
+                p.textContent = `Anonymous function expression: ${message}`;
+                p.classList.add('italic', 'text-red-500');
+                outputDiv.appendChild(p);
+            });
+        }, 5000);
+
+        // Example 4: Passing an anonymous arrow function directly (the most common modern way)
+        // This is a concise, inline function, which is very common in modern JavaScript.
+        setTimeout(() => {
+            console.log("--- Calling processData with anonymous arrow function ---");
+            processData("callbacks are powerful", (message) => {
+                console.log(`Anonymous arrow function: ${message}`);
+                const p = document.createElement('p');
+                p.textContent = `Anonymous arrow function: ${message}`;
+                p.classList.add('underline', 'text-purple-600');
+                outputDiv.appendChild(p);
+            });
+        }, 7000);
