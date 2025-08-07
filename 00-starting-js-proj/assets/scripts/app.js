@@ -65,7 +65,7 @@ const user1 = ["shaun","fourie"];
 const userN = user1[0]; // manual destructuring
 const userL = user1[1]; // manual destructuring
 console.log(userN + userL);
-
+//VS
 const [newUserN, newUserL] = ["shaun","fourie"]; // Destructure inline, pulling out values by order 
 console.log(newUserN + newUserL);
 
@@ -76,15 +76,36 @@ const user2 = {
 };
 const u2N = user2.name; // Manual destructuring
 const u2A = user2.age;  // Manual destructuring
-
+//VS
 const {name, age} = { // Destructure inline, pulling out values by name 
-    name: "Max",
-    age: 34
+name: "Max",
+age: 34
 };
 console.log(name + age)
 
 const {name: newname, age: newage} = { // Destructure inline, with alliases
+name: "Max",
+age: 34
+};
+console.log(newname + newage) */
+
+/*... Spread Operator for Arrays
+const names = ["Mike", "Victor"];
+const moreNames = ["Julius", "Andre"];
+//const mergeNames = [names, moreNames]; // Would just create a nested Array
+//VS
+const mergeNames = [...names, ...moreNames]; // Use ...spread operator to create a new list without nesting
+//... Pulls out all the values in comma seperated form, to reuse elsewhere  
+console.log(mergeNames)
+
+//... Spread Operator for Objects
+const user3 = {
     name: "Max",
     age: 34
 };
-console.log(newname + newage) */
+
+const user4 = {
+    isAdmin: true, 
+    ...user3};
+console.log(user4); */
+
