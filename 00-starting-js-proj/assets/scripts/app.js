@@ -2,13 +2,14 @@ import { apiKey } from './util.js';
 
 console.log(apiKey);
 
+/*
 // Objects 
 const user = {
     name: "Max",
     age: 34,
     // Methods are functions within an object
     greet() {
-        console.log("Hello!");
+        console.log("Hi I'm " + this.name + ", aged " + this.age + ".");
         console.log(this.age);
     }
 };
@@ -16,7 +17,7 @@ const user = {
 console.log(user.name);
 user.greet();
 
-// Classes create generic blueprints for object creation  
+// Classes are generic blueprints for object creation  
 class User {
     constructor(name, age) {
         this.name = name;
@@ -24,7 +25,7 @@ class User {
     }
 // Methods also
     greet() {
-        console.log('Hi');
+        console.log('Hi ' + this.name);
     }
 }
 
@@ -32,3 +33,26 @@ class User {
 const user1 = new User("Manuel", 35);
 console.log(user1);
 user1.greet();
+*/
+
+const hobbies = ["Sports", "Cooking", "Reading"];
+console.log(hobbies[0])
+hobbies.push("Working")
+console.log(hobbies)
+const indreading = hobbies.findIndex((item) => {
+    return item === "Reading";
+});
+console.log(indreading);
+
+const numbers = [4,8,12,16];
+console.log(numbers[3])
+numbers.push(20)
+console.log(numbers)
+const ind4 = numbers.findIndex(item => item === 16);
+console.log(ind4);
+
+const newhobbies = hobbies.map(item => item + " for fun");
+console.log(newhobbies);
+
+const newobjects = hobbies.map(item => ({text: item}));
+console.log(newobjects);
