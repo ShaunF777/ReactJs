@@ -1,0 +1,7 @@
+:root { --gap: 12px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; }
+body { padding: 24px; background:#f7f7fb; color:#111; }
+.controls { display:flex; gap:var(--gap); flex-wrap:wrap; margin-bottom:16px; }
+button { padding:8px 14px; border-radius:6px; border:1px solid #ccd; background:white; cursor:pointer; }
+button[disabled] { opacity:0.6; cursor:not-allowed; }
+.status { margin-bottom:8px; min-height:1.4em; color:#333; }
+.output pre { background:#0b1020; color:#e6edf3; padding:12px; border-radius:6px; white-space:pre-wrap; max-height:40vh; overflow:auto; }
