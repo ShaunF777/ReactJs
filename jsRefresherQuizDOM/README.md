@@ -22,9 +22,10 @@ jsRefresherQuiz/
 ├─ main.js 
 └─ quizzes/ 
     ├─ quizBuilder.js 
-    ├─ quiz1.json 
-    ├─ quiz2.json 
-    └─ quiz3.json
+    ├─ quiz1-import-export.json 
+    ├─ quiz2-vars-values-operators.json 
+    ├─ quiz3-functions.json
+    └─ quiz4-objects.json
 ```
 ### index.html
 - The single page shell.
@@ -43,7 +44,7 @@ jsRefresherQuiz/
 
 ### main.js
 - Top-level orchestrator.
-- Imports `quizBuilder.js`.
+- Statically imports `quizBuilder.js`so the builder code is available.
 - Attaches click handlers to quiz buttons.
 - On click:
   1. Fetches the JSON file.
@@ -80,7 +81,7 @@ buildQuiz({ container, setStatus, log, title, questions })
 }
 ```
 ---
-## 📝 Authoring New Quizzes
+## 📝 Adding New Quizzes (step-by-step)
 1. Create a new JSON file in `quizzes/`, e.g. `quiz4.json`.
 2. Add a button in `index.html`:
 ```html
@@ -101,6 +102,12 @@ buildQuiz({ container, setStatus, log, title, questions })
 }
 ```
 4. Reload the page and click the new button.
+
+Optional tweaks
+- Case-insensitive matching: change the comparison in quizBuilder.js from exact equality to lowercase comparison.
+- Multiple-choice support: add a "type" and "choices" field per question and extend the builder to render buttons for choices.
+- Persist history: implement localStorage writes inside log() or in quizBuilder before appending items.
+
 ---
 ## 🔧 Customization Notes
 - **Case sensitivity**: Answers are matched exactly. To allow case-insensitive matching, change the comparison in `quizBuilder.js`:
@@ -112,7 +119,9 @@ const isCorrect = normalized.toLowerCase() === q.answer.toLowerCase();
 - **Persistence**: To save results, extend `log()` in `main.js` to also write to `localStorage`.
 ---
 ## 📌 Context Snippets (for AI chats)
-### Contract between main.js and quizBuilder.js
+
+### Use these sections when you want to paste context into a new AI chat to continue development or add quizzes.
+### Contract between main.js and quizBuilder.js (what main.js expects)
 ```bash
 - main.js fetches JSON at button's data-quiz path.
 - JSON must contain: { title: string, questions: [ { id, prompt, answer, explanation } ] }.

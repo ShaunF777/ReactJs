@@ -1,0 +1,53 @@
+{
+  "title": "Quiz 2 - Variables, Values & Operators",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Which keyword is used to declare a variable that can be reassigned?",
+      "answer": "let",
+      "explanation": "Use `let` to declare block-scoped variables that can be reassigned."
+    },
+    {
+      "id": 2,
+      "prompt": "Which keyword declares a constant that must not be reassigned?",
+      "answer": "const",
+      "explanation": "`const` creates a constant binding. Attempting to reassign it will throw an error."
+    },
+    {
+      "id": 3,
+      "prompt": "What are the three most common primitive value types in JavaScript?",
+      "answer": "strings, numbers, booleans",
+      "explanation": "JavaScript handles many values, but the most common primitives are strings, numbers, and booleans."
+    },
+    {
+      "id": 4,
+      "prompt": "Which two special values indicate that a variable does not currently hold a value?",
+      "answer": "null and undefined",
+      "explanation": "`null` and `undefined` represent the absence of a value in JavaScript."
+    },
+    {
+      "id": 5,
+      "prompt": "What notation convention should be used for variable names in JavaScript?",
+      "answer": "camelCase",
+      "explanation": "Variable names should follow camelCase: start lowercase, capitalize subsequent words, no spaces or dashes."
+    },
+    {
+      "id": 6,
+      "prompt": "Which two special characters are allowed in variable names besides letters and numbers?",
+      "answer": "underscore and dollar sign",
+      "explanation": "Variable names may include `_` and `$`. Other special characters are not allowed."
+    },
+    {
+      "id": 7,
+      "prompt": "What operator is used to assign a value to a variable?",
+      "answer": "=",
+      "explanation": "The single equal sign (`=`) is the assignment operator in JavaScript."
+    },
+    {
+      "id": 8,
+      "prompt": "Why are variables useful compared to directly writing values inline?",
+      "answer": "reusability and readability",
+      "explanation": "Variables allow reusing values and improve code readability by defining values once and referring to them by name."
+    }
+  ]
+}
