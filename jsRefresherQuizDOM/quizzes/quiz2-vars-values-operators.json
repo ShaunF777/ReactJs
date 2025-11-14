@@ -15,13 +15,13 @@
     },
     {
       "id": 3,
-      "prompt": "What are the three most common primitive value types in JavaScript?",
+      "prompt": "What are the three most common primitive value types in JavaScript? (clue: s,n,t)",
       "answer": "strings, numbers, booleans",
       "explanation": "JavaScript handles many values, but the most common primitives are strings, numbers, and booleans."
     },
     {
       "id": 4,
-      "prompt": "Which two special values indicate that a variable does not currently hold a value?",
+      "prompt": "Which two special values indicate that a variable does not currently hold a value? (clue: n__ and un____ed)",
       "answer": "null and undefined",
       "explanation": "`null` and `undefined` represent the absence of a value in JavaScript."
     },
@@ -33,7 +33,7 @@
     },
     {
       "id": 6,
-      "prompt": "Which two special characters are allowed in variable names besides letters and numbers?",
+      "prompt": "Which two special characters are allowed in variable names besides letters and numbers? (clue: NOT - and S, but...)",
       "answer": "underscore and dollar sign",
       "explanation": "Variable names may include `_` and `$`. Other special characters are not allowed."
     },
@@ -45,9 +45,51 @@
     },
     {
       "id": 8,
-      "prompt": "Why are variables useful compared to directly writing values inline?",
+      "prompt": "Why are variables useful compared to directly writing values inline? (clue: NOT use and read, but...)",
       "answer": "reusability and readability",
       "explanation": "Variables allow reusing values and improve code readability by defining values once and referring to them by name."
+    },
+    {
+      "id": 9,
+      "prompt": "Which four basic math operators are available in JavaScript? (clue: p, m, t, d)",
+      "answer": "plus, minus, times, division",
+      "explanation": "JavaScript supports + (addition), - (subtraction), * (multiplication), and / (division)."
+    },
+    {
+      "id": 10,
+      "prompt": "Besides numbers, what else can the plus operator (+) be used for? (clue: Con___ s___s)",
+      "answer": "concatenating strings",
+      "explanation": "The + operator can join strings together, e.g. \"hello\" + \"world\" → \"helloworld\"."
+    },
+    {
+      "id": 11,
+      "prompt": "In Js syntax, strings have _____ to destinguish them from numbers? (one word)",
+      "answer": "quotes",
+      "explanation": "Strings must be wrapped in single or double quotes, while numbers are written without quotes."
+    },
+    {
+      "id": 12,
+      "prompt": "Which operator checks for strict equality and returns a Boolean?",
+      "answer": "===",
+      "explanation": "The triple equal sign (`===`) checks for strict equality and yields true or false."
+    },
+    {
+      "id": 13,
+      "prompt": "What type of value does a comparison operator (like ===, >, <) return?",
+      "answer": "Boolean",
+      "explanation": "Comparison operators return either true or false."
+    },
+    {
+      "id": 14,
+      "prompt": "Which operators check for greater than, smaller than, greater or equal, and smaller or equal?",
+      "answer": ">, <, >=, <=",
+      "explanation": "These are the standard comparison operators used to compare values."
+    },
+    {
+      "id": 15,
+      "prompt": "Which keyword is commonly used with comparison operators to execute code conditionally?",
+      "answer": "if",
+      "explanation": "The `if` keyword introduces conditional statements that run code only if a condition is true."
     }
   ]
 }
