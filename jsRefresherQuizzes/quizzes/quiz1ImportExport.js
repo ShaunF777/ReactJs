@@ -3,17 +3,19 @@
 // Export an async function named startQuiz so main.js can import and run it.
 
 /*
-  Module contract:
-  export async function startQuiz(helpers = {}) { ... }
-  OR
-  export default async function startQuiz(helpers = {}) { ... }
-
-  helpers: { setStatus, log } - optional functions passed from main.js
+  Module contract: main.js calls this function and passes UI helper functions
+  helpers parameter receives: { setStatus, log } from main.js
+  These are the actual functions that update the page status and console output
 */
 
 export async function startQuiz(helpers = {}) {
+  // Destructuring: extract setStatus and log from helpers object
+  // If helpers is empty, use dummy functions () => {} as fallbacks
   const { setStatus = () => {}, log = () => {} } = helpers;
-
+/**This extracts setStatus and log from the helpers object that main.js passed in. If helpers is empty, it uses dummy functions () => {} as fallbacks.
+The flow: main.js calls: start({ setStatus, log }) - sends functions TO the quiz
+Quiz receives: helpers = { setStatus, log } - gets the functions FROM main.js
+Quiz extracts: const { setStatus, log } = helpers - unpacks them for use */
   setStatus('Quiz1: preparing questions...');
   log('Quiz1 started: Imports & Exports');
 
@@ -93,22 +95,32 @@ export async function startQuiz(helpers = {}) {
   }
   ];
 
-  let correct = 0;
+  let correct = 0; // Track number of correct answers
+  
+  // Loop through each question object in the questions array
   for (const q of questions) {
+    // Update page status to show current question progress
     setStatus(`Question ${q.id} of ${questions.length}`);
-    // Use prompt() for simplicity; consider replacing with DOM inputs later
+    
+    // Show browser prompt dialog with the question text
     const reply = prompt(`Q${q.id}: ${q.prompt}`);
-    if (reply === null) { // user cancelled
+    
+    // Check if user clicked Cancel (prompt returns null)
+    if (reply === null) {
       setStatus('Quiz cancelled by user.');
       log('User cancelled the quiz.');
       return { cancelled: true, correct, total: questions.length };
     }
+    
+    // Compare user's answer (trimmed) with correct answer
     if (reply.trim() === q.answer) {
       alert('Correct! ' + q.explanation);
-      correct++;
+      correct++; // Increment score
     } else {
       alert(`Incorrect. Expected "${q.answer}". ${q.explanation}`);
     }
+    
+    // Log the user's answer to the console output
     log(`Q${q.id} answer: ${reply}`);
   }
 
@@ -119,3 +131,12 @@ export async function startQuiz(helpers = {}) {
   // Return result for main.js to render/store
   return { quiz: 'imports-exports', correct, total: questions.length, score: scorePct };
 }
+
+/**The for loop breakdown:
+for (const q of questions) - loops through each question object
+prompt() shows a browser dialog and waits for user input
+reply === null means user clicked Cancel
+reply.trim() === q.answer compares user's answer (with whitespace removed)
+correct++ increments the score counter
+log() records the answer to the console output
+The quiz module uses the functions main.js gave it to update the page while running! */
