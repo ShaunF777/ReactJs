@@ -1,23 +1,95 @@
 {
-  "title": "Quiz 1 - Imports & Exports",
+  "title": "Quiz 3 - Functions",
   "questions": [
     {
       "id": 1,
-      "prompt": "Fill the keyword used before a declaration to make it a named export:",
-      "answer": "export",
-      "explanation": "Named exports use export before declarations, e.g. export let apiKey = '...'"
+      "prompt": "Which keyword creates a traditional function in JavaScript?",
+      "answer": "function",
+      "explanation": "Use the `function` keyword to define a traditional function: function myFn() { ... }."
     },
     {
       "id": 2,
-      "prompt": "To export a default value you use two words (lowercase, space separated). Fill them:",
-      "answer": "export default",
-      "explanation": "Default exports use export default value;. Only one default per file."
+      "prompt": "What newer concise syntax was mentioned as an alternative for creating functions?",
+      "answer": "arrow function",
+      "explanation": "Arrow functions use the => syntax, e.g. const fn = (a) => { ... }."
     },
     {
       "id": 3,
-      "prompt": "What two characters are used to import named exports? (type exactly):",
+      "prompt": "What are the names inside the parentheses of a function definition called? (one word)",
+      "answer": "parameters",
+      "explanation": "Parameters are the named inputs for a function, available inside its body."
+    },
+    {
+      "id": 4,
+      "prompt": "How do you run or execute a function after defining it? (one word)",
+      "answer": "call",
+      "explanation": "You invoke or call a function by using its name followed by parentheses, e.g. greet()."
+    },
+    {
+      "id": 5,
+      "prompt": "Which punctuation characters surround a function's parameter list? (type both, no space, e.g. ?? )",
+      "answer": "()",
+      "explanation": "Function definitions and calls use parentheses: function foo() { } and foo()."
+    },
+    {
+      "id": 6,
+      "prompt": "Which punctuation characters mark the function body where its code lives? (type both, no space, e.g. ?? )",
       "answer": "{}",
-      "explanation": "Named imports use curly braces: import { apiKey } from './util.js';"
+      "explanation": "Curly braces define the function body: function foo() { /* code */ }."
+    },
+    {
+      "id": 7,
+      "prompt": "What keyword is used inside a function to produce a value that the caller receives?",
+      "answer": "return",
+      "explanation": "The return keyword exits the function and provides a value to the caller."
+    },
+    {
+      "id": 8,
+      "prompt": "If a parameter has a fallback specified in the function definition, what is that fallback called? (two words)",
+      "answer": "default value",
+      "explanation": "You can assign a default value to parameters, e.g. function greet(name = 'Max') { ... }."
+    },
+    {
+      "id": 9,
+      "prompt": "When a function returns a value, how should you typically capture that returned value so you can use it later? (one word)",
+      "answer": "assign",
+      "explanation": "Store the returned value in a variable or constant: const result = createGreeting('Max')."
+    },
+    {
+      "id": 10,
+      "prompt": "Why are functions useful compared to repeating code inline? (two words)",
+      "answer": "reusability and clarity",
+      "explanation": "Functions let you reuse code and improve structure/readability by naming behavior."
+    },
+    {
+      "id": 11,
+      "prompt": "When naming functions, what is the recommended practice about the name's meaning? (short answer)",
+      "answer": "describe what it does",
+      "explanation": "Function names should clearly describe what the function does, e.g. createGreeting for a function that builds a greeting string."
+    },
+    {
+      "id": 12,
+      "prompt": "Can a function be called multiple times after it's defined? (answer 'yes' or 'no')",
+      "answer": "yes",
+      "explanation": "Functions can be invoked repeatedly; each call executes the function body anew."
+    },
+    {
+      "id": 13,
+      "prompt": "Parameters and return values are independent. True or False? (answer 'true' or 'false')",
+      "answer": "true",
+      "explanation": "A function may accept parameters, return a value, both, or neither; the two concepts are independent."
+    },
+    {
+      "id": 14,
+      "prompt": "Give an example function name (camelCase) you might use for a function that creates a greeting string. (one word, no spaces)",
+      "answer": "createGreeting",
+      "explanation": "createGreeting is a descriptive camelCase function name that indicates it constructs a greeting string."
+    },
+    {
+      "id": 15,
+      "prompt": "Functions must only have ___ return statement at most. (a single word)",
+      "answer": "one",
+      "explanation": "Only one return statement is allowed. Functions without 'return', will implicitly return 'undefined'."
     }
   ]
 }
