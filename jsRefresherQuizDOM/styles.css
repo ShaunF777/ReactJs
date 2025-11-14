@@ -1,2 +1,73 @@
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 1rem; }
-h1 { margin-top: 0; }
+:root {
+  --gap: 12px;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  padding: 24px;
+  background: #f7f7fb;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+.controls {
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-bottom: 8px;
+  min-height: 1.4em;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.output pre {
+  background: #0b1020;
+  color: #e6edf3;
+  padding: 12px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  max-height: 24vh;
+  overflow: auto;
+  margin-bottom: 12px;
+}
+
+/* Quiz container styles: where questions, answers and history appear */
+.quiz-container {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(10, 15, 30, 0.04);
+}
+
+.quiz-header { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.quiz-title { font-weight: 600; margin: 0; }
+.question-list { margin-top: 12px; display:flex; flex-direction:column; gap:8px; }
+.question-item { padding: 10px; border-radius:6px; border:1px solid #f1f5f9; background:#fbfdff; }
+.question-prompt { font-weight:500; color:#0f172a; }
+.question-meta { color: var(--muted); font-size:0.85rem; margin-top:4px; }
+
+.controls-row { display:flex; gap:8px; margin-top:12px; align-items:center; }
+input[type="text"] { padding:8px; border-radius:6px; border:1px solid #cbd5e1; flex:1; }
+.small { padding:6px 10px; font-size:0.9rem; }
+.correct { color: #065f46; font-weight:600; }
+.incorrect { color: #b91c1c; font-weight:600; }
