@@ -10,6 +10,7 @@ function setStatus(msg) {
 }
 
 function log(...args) {
+  // Spread operator collects all arguments into array, joins with spaces, adds newline
   consoleEl.textContent += args.join(' ') + '\n';
 }
 
@@ -18,10 +19,10 @@ document.querySelectorAll('button[data-quiz]').forEach(btn => {
   btn.addEventListener('click', async () => {
     const path = btn.getAttribute('data-quiz');
 
-    // Guard UI while loading
+    // Prevent multiple clicks while quiz loads
     btn.disabled = true;
     setStatus(`Loading ${path}...`);
-    consoleEl.textContent = ''; // clear previous output
+    consoleEl.textContent = ''; // Reset console for fresh quiz output
 
     try {
       // Dynamic import of the quiz module when needed
@@ -34,7 +35,7 @@ document.querySelectorAll('button[data-quiz]').forEach(btn => {
       }
 
       setStatus('Quiz loaded. Running...');
-      // Call the quiz and await its result (module handles prompts/DOM/UI)
+      // Pass our UI functions to quiz module so it can update status and log output
       const result = await start({ setStatus, log });
 
       // Result is an optional object with summary details
@@ -48,7 +49,7 @@ document.querySelectorAll('button[data-quiz]').forEach(btn => {
       consoleEl.textContent = `Error: ${err.message}\n${err.stack}`;
       setStatus('Error loading or running quiz. See console output.');
     } finally {
-      btn.disabled = false;
+      btn.disabled = false; // Re-enable button after quiz completes or fails
     }
   });
 });
