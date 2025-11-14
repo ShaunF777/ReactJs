@@ -63,7 +63,7 @@
     },
     {
       "id": 11,
-      "prompt": "In Js syntax, strings have _____ to destinguish them from numbers? (one word)",
+      "prompt": "In Js syntax, strings have _____ to distinguish them from numbers? (one word)",
       "answer": "quotes",
       "explanation": "Strings must be wrapped in single or double quotes, while numbers are written without quotes."
     },
