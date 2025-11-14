@@ -1,0 +1,23 @@
+{
+  "title": "Quiz 1 - Imports & Exports",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Fill the keyword used before a declaration to make it a named export:",
+      "answer": "export",
+      "explanation": "Named exports use export before declarations, e.g. export let apiKey = '...'"
+    },
+    {
+      "id": 2,
+      "prompt": "To export a default value you use two words (lowercase, space separated). Fill them:",
+      "answer": "export default",
+      "explanation": "Default exports use export default value;. Only one default per file."
+    },
+    {
+      "id": 3,
+      "prompt": "What two characters are used to import named exports? (type exactly):",
+      "answer": "{}",
+      "explanation": "Named imports use curly braces: import { apiKey } from './util.js';"
+    }
+  ]
+}
