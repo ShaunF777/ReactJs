@@ -1,0 +1,140 @@
+{
+  "title": "Quiz 4 - Arrow & Anonymous Functions",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "What is the concise JavaScript syntax for defining functions without the 'function' keyword? (clue: function call, space, arrow )",
+      "answer": "() =>",
+      "explanation": "Arrow functions use the => syntax, e.g. const fn = () => { ... }."
+    },
+    {
+      "id": 2,
+      "prompt": "Write the syntax for an anonymous arrow function that logs 'Hello'.",
+      "answer": "() => console.log('Hello')",
+      "explanation": "Anonymous functions have no name. Arrow syntax makes them concise."
+    },
+    {
+      "id": 3,
+      "prompt": "Fill in the blank: const add = _____ { return a + b }; (clue: parameters, arrow)",
+      "answer": "(a, b) =>",
+      "explanation": "You omit the 'function' keyword and use => instead."
+    },
+    {
+      "id": 4,
+      "prompt": "Which punctuation characters enclose the parameter list in an arrow function? (type both, no space)",
+      "answer": "()",
+      "explanation": "Parameters are listed inside parentheses: (param1, param2) => { ... }."
+    },
+    {
+      "id": 5,
+      "prompt": "Write an arrow function that doubles a number using 'return'.",
+      "answer": "n => { return n * 2 }",
+      "explanation": "Arrow functions can use 'return' inside curly braces.",
+      "codeSnippet": "// Normal function with return\n function double(n) {\n    return n * 2;\n}\n\nconsole.log(double(7));"
+    },
+    {
+      "id": 6,
+      "prompt": "Write a React inline event handler using an arrow function for onClick that logs 'Clicked'.",
+      "answer": "onClick={() => console.log('Clicked')}",
+      "explanation": "Arrow functions are concise and often used inline for event handlers."
+    },
+    {
+      "id": 7,
+      "prompt": "Write an arrow function that takes one parameter 'x' and returns x * 3 without parentheses around the parameter.",
+      "answer": "x => x * 3",
+      "explanation": "If there is exactly one parameter, parentheses can be omitted.",
+      "codeSnippet": "// Normal function\n function tripple(x) {\n    return x * 3;\n}\n\nconsole.log(tripple(7));\n\n"
+    },
+    {
+      "id": 8,
+      "prompt": "Write an arrow function that takes no parameters and returns the string 'Hi'.",
+      "answer": "() => 'Hi'",
+      "explanation": "If there are no parameters, parentheses must be used."
+    },
+    {
+      "id": 9,
+      "prompt": "Write an arrow function that takes two parameters 'a' and 'b' and returns their sum (clue: parentheses required).",
+      "answer": "(a, b) => a + b",
+      "explanation": "Multiple parameters require parentheses."
+    },
+    {
+      "id": 10,
+      "prompt": "Write an arrow function that doubles a number without curly braces or the 'return' keyword.",
+      "answer": "n => n * 2",
+      "explanation": "If the body is a single return expression, curly braces and 'return' can be omitted."
+    },
+    {
+      "id": 11,
+      "prompt": "Write an arrow function that returns an object with a property 'age' set to the parameter 'n'. (clue: wrap object in parentheses)",
+      "answer": "n => ({ age: n })",
+      "explanation": "Objects must be wrapped in parentheses to avoid confusion with function body braces."
+    },
+    {
+      "id": 12,
+      "prompt": "If your arrow function takes exactly one parameter, you may omit the wrapping parentheses. Instead of (userName) => { ... } you could write ?",
+      "answer": "userName => { ... }",
+      "explanation": "Single-parameter arrow functions may omit the surrounding parentheses."
+    },
+    {
+      "id": 13,
+      "prompt": "Complete the concise arrow-function syntax (no name) used instead of the 'function' keyword for an empty parameter list: ?",
+      "answer": "() => { }",
+      "explanation": "No-parameter arrow functions must include empty parentheses."
+    },
+    {
+      "id": 14,
+      "prompt": "Fill in the blank to match this form: const add = _____ { return a + b }; (use parentheses for parameters and the arrow) ?",
+      "answer": "(a, b) => { return a + b }",
+      "explanation": "Multiple parameters require parentheses and bodies using return need curly braces."
+    },
+    {
+      "id": 15,
+      "prompt": "Short form: write an arrow function that takes one parameter n and returns n * 3 without curly braces or the return keyword: ?",
+      "answer": "n => n * 3",
+      "explanation": "A single-expression body can omit braces and the return keyword."
+    },
+    {
+      "id": 16,
+      "prompt": "How do you implicitly return an object literal from an arrow function (wrap the object in extra parentheses)? Write the function for parameter n that returns { age: n }: ?",
+      "answer": "n => ({ age: n })",
+      "explanation": "Wrap the object in parentheses so braces are treated as an expression, not a function body."
+    },
+    {
+      "id": 17,
+      "prompt": "Write an anonymous arrow function (no name, no assignment) that logs 'Hello' to the console as a single expression: ?",
+      "answer": "() => console.log('Hello')",
+      "explanation": "Anonymous arrow functions are often used inline and can be concise for one-liners."
+    },
+    {
+      "id": 18,
+      "prompt": "Write an arrow function assigned to const double that uses an explicit return inside curly braces (match spacing): ?",
+      "answer": "const double = n => { return n * 2 }",
+      "explanation": "You may use curly braces and the return keyword when more statements or clarity are needed."
+    },
+    {
+      "id": 19,
+      "prompt": "Write a React inline onClick handler that uses an arrow function to call handleClick with value (as used inside JSX): ?",
+      "answer": "onClick={() => handleClick(value)}",
+      "explanation": "Arrow functions are commonly used inline in JSX for event handlers."
+    },
+    {
+      "id": 20,
+      "prompt": "Show the shortest arrow function that takes no parameters and returns the string 'Hi': ?",
+      "answer": "() => 'Hi'",
+      "explanation": "No parameters require () and a single expression can be returned implicitly."
+    },
+    {
+      "id": 21,
+      "prompt": "Convert this traditional function to the equivalent concise arrow form: function(x){ return x + 1 } becomes ?",
+      "answer": "x => x + 1",
+      "explanation": "Single-parameter, single-expression functions translate to this concise arrow form."
+    },
+    {
+      "id": 22,
+      "prompt": "Write an arrow function that takes (a, b) and implicitly returns an object with properties sum and product (use parentheses around the returned object): ?",
+      "answer": "(a, b) => ({ sum: a + b, product: a * b })",
+      "explanation": "When implicitly returning an object, wrap the object in parentheses; include both properties exactly as shown."
+    }
+  ]
+}
+
