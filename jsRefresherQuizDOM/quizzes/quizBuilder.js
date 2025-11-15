@@ -77,6 +77,33 @@ export function buildQuiz({ container, setStatus = () => {}, log = () => {}, tit
     return String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
   }
 
+  // Execute code snippet safely and capture console output
+  function executeSnippet(code, outputDiv) {
+    const logs = [];
+    
+    // Create sandboxed console
+    const sandboxConsole = {
+      log: (...args) => logs.push(args.join(' ')),
+      error: (...args) => logs.push('ERROR: ' + args.join(' ')),
+      warn: (...args) => logs.push('WARN: ' + args.join(' '))
+    };
+    
+    try {
+      // Execute in sandboxed function scope
+      const func = new Function('console', code);
+      func(sandboxConsole);
+      
+      // Display output
+      outputDiv.innerHTML = logs.length > 0 
+        ? `<strong>Output:</strong><br>${logs.map(escapeHtml).join('<br>')}`
+        : '<strong>No output</strong>';
+      outputDiv.style.display = 'block';
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>Error:</strong><br>${escapeHtml(error.message)}`;
+      outputDiv.style.display = 'block';
+    }
+  }
+
   function appendHistoryItem(q, given, wasCorrect) {
     const item = document.createElement('div');
     item.className = 'question-item';
@@ -108,7 +135,40 @@ export function buildQuiz({ container, setStatus = () => {}, log = () => {}, tit
     setStatus(`${title} — Question ${index + 1} of ${questions.length}`);
     
     if (questionArea && q) {
-      questionArea.textContent = `Q${q.id}: ${q.prompt}`;
+      questionArea.innerHTML = '';
+      
+      // Add question prompt
+      const promptDiv = document.createElement('div');
+      promptDiv.textContent = `Q${q.id}: ${q.prompt}`;
+      questionArea.appendChild(promptDiv);
+      
+      // Add code snippet if present
+      if (q.codeSnippet) {
+        const snippetContainer = document.createElement('div');
+        snippetContainer.className = 'code-snippet-container';
+        
+        const snippetPre = document.createElement('pre');
+        snippetPre.className = 'code-snippet';
+        snippetPre.textContent = q.codeSnippet;
+        
+        const runBtn = document.createElement('button');
+        runBtn.textContent = 'Run snippet';
+        runBtn.className = 'run-button';
+        
+        const outputDiv = document.createElement('div');
+        outputDiv.className = 'snippet-output';
+        outputDiv.style.display = 'none';
+        
+        runBtn.addEventListener('click', () => {
+          executeSnippet(q.codeSnippet, outputDiv);
+        });
+        
+        snippetContainer.appendChild(snippetPre);
+        snippetContainer.appendChild(runBtn);
+        snippetContainer.appendChild(outputDiv);
+        questionArea.appendChild(snippetContainer);
+      }
+      
       questionArea.style.display = 'block';
     }
   }

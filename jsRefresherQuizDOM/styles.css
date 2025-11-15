@@ -128,3 +128,37 @@ input[type="text"] { padding:8px; border-radius:6px; border:1px solid var(--bord
 .small { padding:6px 10px; font-size:0.9rem; }
 .correct { color: #065f46; font-weight:600; }
 .incorrect { color: #b91c1c; font-weight:600; }
+
+/* Code snippet styles */
+.code-snippet-container {
+  margin: 12px 0;
+}
+
+.code-snippet {
+  background: var(--console-bg);
+  color: var(--console-text);
+  padding: 12px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin: 8px 0;
+}
+
+.run-button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  margin-bottom: 8px;
+}
+
+.snippet-output {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Courier New', monospace;
+}
