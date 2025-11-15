@@ -6,6 +6,17 @@ const statusEl = document.getElementById('status');
 const consoleEl = document.getElementById('console');
 const quizContainer = document.getElementById('quiz-container');
 
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Set dark mode as default (no class needed)
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light');
+  const isLight = body.classList.contains('light');
+  themeToggle.textContent = isLight ? '🌙 Dark' : '☀️ Light';
+});
+
 // helpers to pass to the builder
 function setStatus(msg) {
   statusEl.textContent = msg;
@@ -19,6 +30,9 @@ function log(...args) {
 // This keeps main.js linear and easy to read: first load builder, then attach handlers.
 // Using static import at top-level ensures bundlers or module loaders can reason about dependencies.
 import { buildQuiz } from './quizzes/quizBuilder.js';
+
+// Initialize theme toggle text for dark mode default
+themeToggle.textContent = '☀️ Light';
 
 // Attach click handlers to each quiz button
 document.querySelectorAll('button[data-quiz]').forEach(btn => {
