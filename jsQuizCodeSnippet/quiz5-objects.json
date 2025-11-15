@@ -1,0 +1,33 @@
+{
+  "title": "Quiz 5 - Objects",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Create a user object with name \"Max\" and age 34 using object literal syntax. (Type the object literal only.)",
+      "answer": "{ name: \"Max\", age: 34 }",
+      "explanation": "Objects group related values as key:value pairs.",
+      "codeSnippet": "// Objects\nconst user = {\n    name: \"Max\",\n    age: 34,\n};\nconsole.log(user.name);"
+    },
+    {
+      "id": 2,
+      "prompt": "Using dot notation, how do you access the name property of user? (Type the expression only.)",
+      "answer": "user.name",
+      "explanation": "Dot notation accesses properties on an object.",
+      "codeSnippet": "console.log(user.name);"
+    },
+    {
+      "id": 3,
+      "prompt": "Add a method greet to the user object that logs \"Hi I'm \" + this.name. (Type only the method definition as it appears inside an object.)",
+      "answer": "greet() { console.log(\"Hi I'm \" + this.name); }",
+      "explanation": "Methods are functions stored as object properties and can use this to reference the object.",
+      "codeSnippet": "const user = {\n    name: \"Max\",\n    age: 34,\n    greet() {\n        console.log(\"Hi I'm \" + this.name + \".\");\n    }\n};\nuser.greet();"
+    },
+    {
+      "id": 4,
+      "prompt": "Inside a method, how do you access the age property with this? (Type the expression only.)",
+      "answer": "this.age",
+      "explanation": "this refers to the current object inside its method.",
+      "codeSnippet": "const user = { name: \"Max\", age: 34, showAge() { console.log(this.age); } };\nuser.showAge();"
+    }
+  ]
+}

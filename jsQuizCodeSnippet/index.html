@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Quiz 5 - Objects (demo)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 20px; }
+    pre { background:#f6f8fa; padding:10px; border-radius:6px; overflow:auto; }
+    .question { margin-bottom:20px; }
+    .output { background:#111; color:#0f0; padding:10px; border-radius:6px; white-space:pre-wrap; }
+    input[type="text"]{ width:100%; padding:8px; box-sizing:border-box; }
+    button { margin-top:6px; }
+  </style>
+</head>
+<body>
+  <h1 id="title">Quiz</h1>
+  <div id="container"></div>
+
+  <script>
+  // Simple utility to fetch the JSON and render it
+  async function loadQuiz() {
+    const res = await fetch('quiz5-objects.json'); // place JSON next to this page
+    const quiz = await res.json();
+    document.getElementById('title').textContent = quiz.title;
+    const container = document.getElementById('container');
+
+    quiz.questions.forEach(q => {
+      const el = document.createElement('div');
+      el.className = 'question';
+
+      const prompt = document.createElement('div');
+      prompt.textContent = q.prompt;
+      el.appendChild(prompt);
+
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = 'Type the exact answer syntax here';
+      input.value = ''; // leave empty for pupil input
+      el.appendChild(input);
+
+      const checkBtn = document.createElement('button');
+      checkBtn.textContent = 'Check Answer';
+      checkBtn.onclick = () => {
+        // simple exact-match check (trim to avoid incidental whitespace)
+        const user = input.value;
+        const ok = user === q.answer;
+        alert(ok ? 'Correct' : 'Incorrect. Expected: ' + q.answer);
+      };
+      el.appendChild(checkBtn);
+
+      // code snippet display
+      if (q.codeSnippet) {
+        const pre = document.createElement('pre');
+        pre.textContent = q.codeSnippet;
+        el.appendChild(pre);
+
+        const runBtn = document.createElement('button');
+        runBtn.textContent = 'Run snippet';
+        el.appendChild(runBtn);
+
+        const out = document.createElement('div');
+        out.className = 'output';
+        out.textContent = '';
+        el.appendChild(out);
+
+        runBtn.onclick = () => {
+          out.textContent = '';
+          // capture console.log inside this sandbox
+          const captured = [];
+          const sandboxConsole = {
+            log: (...args) => captured.push(args.join(' ')),
+            error: (...args) => captured.push('ERROR: ' + args.join(' '))
+          };
+          // Execute snippet in function scope with console replaced
+          try {
+            const wrapped = new Function('console', q.codeSnippet);
+            wrapped(sandboxConsole);
+          } catch (err) {
+            captured.push('Exception: ' + err.message);
+          }
+          out.textContent = captured.join('\\n');
+        };
+      }
+
+      container.appendChild(el);
+    });
+  }
+
+  loadQuiz().catch(err => {
+    document.getElementById('container').textContent = 'Failed to load quiz JSON: ' + err;
+  });
+  </script>
+</body>
+</html>
