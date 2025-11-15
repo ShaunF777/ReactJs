@@ -50,6 +50,19 @@ button[disabled] {
   margin-bottom: 12px;
 }
 
+/* Current question display area */
+.current-question {
+  background: white;
+  border: 2px solid var(--accent);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  min-height: 3em;
+  display: none;
+}
+
 /* Quiz container styles: where questions, answers and history appear */
 .quiz-container {
   background: white;

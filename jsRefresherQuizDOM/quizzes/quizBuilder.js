@@ -46,8 +46,15 @@ export function buildQuiz({ container, setStatus = () => {}, log = () => {}, tit
   inputRow.appendChild(inputEl);
   inputRow.appendChild(submitBtn);
 
+  // Create question display area inside the container
+  const questionArea = document.createElement('div');
+  questionArea.id = 'current-question';
+  questionArea.className = 'current-question';
+  questionArea.setAttribute('aria-live', 'polite');
+
   container.appendChild(header);
   container.appendChild(list);
+  container.appendChild(questionArea);
   container.appendChild(inputRow);
 
   // Ensure container is visible in the page
@@ -95,10 +102,15 @@ export function buildQuiz({ container, setStatus = () => {}, log = () => {}, tit
 
   function renderQuestion() {
     const q = questions[index];
+    
     inputEl.value = '';
     inputEl.focus();
     setStatus(`${title} — Question ${index + 1} of ${questions.length}`);
-    inputEl.placeholder = q ? q.prompt : '';
+    
+    if (questionArea && q) {
+      questionArea.textContent = `Q${q.id}: ${q.prompt}`;
+      questionArea.style.display = 'block';
+    }
   }
 
   async function handleSubmit() {
@@ -116,6 +128,11 @@ export function buildQuiz({ container, setStatus = () => {}, log = () => {}, tit
     log(`${title} Q${q.id} answer: "${normalized}" — ${isCorrect ? 'correct' : 'incorrect'}`);
 
     if (isCorrect) correct++;
+    
+    // Auto-scroll to bottom after each answer
+    setTimeout(() => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 100);
 
     index += 1;
     if (index >= questions.length || endedByUser) {
@@ -127,7 +144,11 @@ export function buildQuiz({ container, setStatus = () => {}, log = () => {}, tit
       inputEl.removeEventListener('keydown', onKeyDown);
       endBtn.removeEventListener('click', onEnd);
 
-      // Append done message
+      // Hide question area and append done message
+      if (questionArea) {
+        questionArea.style.display = 'none';
+      }
+      
       const done = document.createElement('div');
       done.className = 'question-meta';
       done.textContent = `Quiz complete. Score: ${correct}/${questions.length} (${scorePct}%).`;
@@ -151,6 +172,9 @@ export function buildQuiz({ container, setStatus = () => {}, log = () => {}, tit
   function onEnd() {
     endedByUser = true;
     setStatus(`${title}: ended by user`);
+    if (questionArea) {
+      questionArea.style.display = 'none';
+    }
   }
 
   // Wire events
