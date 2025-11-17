@@ -1,0 +1,75 @@
+{
+  "title": "Quiz 5 - Objects & Classes",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Write the syntax for creating an object literal with properties name='Max' and age=34.",
+      "answer": "{ name: \"Max\", age: 34 }",
+      "explanation": "Objects group values as key:value pairs inside curly braces.",
+      "codeSnippet": "// Equivalent using separate variables\nconst name = \"Max\";\nconst age = 34;\nconsole.log(name, age);"
+    },
+    {
+      "id": 2,
+      "prompt": "Using dot notation, how do you access the name property of user?",
+      "answer": "user.name",
+      "explanation": "Dot notation is used to access object properties.",
+      "codeSnippet": "// Equivalent using bracket notation\nconst user = { name: \"Max\", age: 34 };\nconsole.log(user[\"name\"]);"
+    },
+    {
+      "id": 3,
+      "prompt": "Add a method greet to the user object that logs 'Hi I'm Max'.",
+      "answer": "greet() { console.log(\"Hi I'm \" + this.name); }",
+      "explanation": "Methods are functions stored as object properties.",
+      "codeSnippet": "// Equivalent standalone function\nfunction greet(){ console.log(\"Hi I'm Max\"); }\ngreet();"
+    },
+    {
+      "id": 4,
+      "prompt": "Inside a method, how do you access the age property with this?",
+      "answer": "this.age",
+      "explanation": "Inside an object method, this refers to the object itself.",
+      "codeSnippet": "// Equivalent using direct property access\nconst user = { name: \"Max\", age: 34 };\nconsole.log(user.age);"
+    },
+    {
+      "id": 5,
+      "prompt": "Write the syntax for defining a class named User with a constructor that sets name and age.",
+      "answer": "class User { constructor(name, age) { this.name = name; this.age = age; } }",
+      "explanation": "Classes are blueprints; constructor initializes properties.",
+      "codeSnippet": "// Equivalent using a factory function\nfunction createUser(name, age){ return { name, age }; }\nconsole.log(createUser(\"Max\", 34));"
+    },
+    {
+      "id": 6,
+      "prompt": "How do you instantiate a new User object with name 'Manuel' and age 35?",
+      "answer": "new User(\"Manuel\", 35)",
+      "explanation": "Use the new keyword with the class constructor.",
+      "codeSnippet": "// Equivalent using object literal\nconst user1 = { name: \"Manuel\", age: 35 };\nconsole.log(user1);"
+    },
+    {
+      "id": 7,
+      "prompt": "Add a greet method to the User class that logs 'Hi' plus the name.",
+      "answer": "greet() { console.log('Hi ' + this.name); }",
+      "explanation": "Class methods are defined without the function keyword.",
+      "codeSnippet": "// Equivalent standalone function\nfunction greet(name){ console.log('Hi ' + name); }\ngreet('Manuel');"
+    },
+    {
+      "id": 8,
+      "prompt": "After creating user1 from the User class, how do you call its greet method?",
+      "answer": "user1.greet()",
+      "explanation": "Methods are called with dot notation followed by parentheses.",
+      "codeSnippet": "// Equivalent calling a standalone function\nfunction greet(name){ console.log('Hi ' + name); }\nconst user1 = { name: 'Manuel' };\ngreet(user1.name);"
+    },
+    {
+      "id": 9,
+      "prompt": "What keyword is used inside a class constructor to assign values to properties?",
+      "answer": "this",
+      "explanation": "this refers to the object being constructed.",
+      "codeSnippet": "// Equivalent using direct assignment in object literal\nconst user = { name: 'Max', age: 34 };\nconsole.log(user.name, user.age);"
+    },
+    {
+      "id": 10,
+      "prompt": "Which keyword is used to create a new object from a class blueprint?",
+      "answer": "new",
+      "explanation": "new instantiates a class into an object.",
+      "codeSnippet": "// Equivalent using a factory function\nfunction makeUser(name, age){ return { name, age }; }\nconst user2 = makeUser('Anna', 28);\nconsole.log(user2);"
+    }
+  ]
+}
