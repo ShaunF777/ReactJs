@@ -77,6 +77,69 @@
       "answer": "hobbies.map(item => ({ text: item }))",
       "explanation": "Wrap object literals in parentheses when returning implicitly from arrow functions.",
       "codeSnippet": "// Equivalent using for loop\nconst hobbies = [\"Sports\", \"Cooking\", \"Reading\", \"Working\"];\nconst newobjects = [];\nfor(const h of hobbies){ newobjects.push({ text: h }); }\nconsole.log(newobjects);"
+    },
+    {
+      "id": 12,
+      "prompt": "Write the syntax for filtering even numbers from the array numbers.",
+      "answer": "numbers.filter(n => n % 2 === 0)",
+      "explanation": "filter() returns a new array with elements that pass the test.",
+      "codeSnippet": "// Equivalent using for loop\nconst numbers = [1,2,3,4,5];\nconst evens = [];\nfor(const n of numbers){ if(n%2===0) evens.push(n); }\nconsole.log(evens);"
+    },
+    {
+      "id": 13,
+      "prompt": "Write the syntax for reducing the array numbers to their sum.",
+      "answer": "numbers.reduce((acc, n) => acc + n, 0)",
+      "explanation": "reduce() accumulates values into a single result.",
+      "codeSnippet": "// Equivalent using for loop\nconst numbers = [1,2,3,4];\nlet sum = 0;\nfor(const n of numbers){ sum += n; }\nconsole.log(sum);"
+    },
+    {
+      "id": 14,
+      "prompt": "Write the syntax for checking if any number in numbers is greater than 10.",
+      "answer": "numbers.some(n => n > 10)",
+      "explanation": "some() returns true if at least one element passes the test.",
+      "codeSnippet": "// Equivalent using for loop\nconst numbers = [4,8,12,16];\nlet result = false;\nfor(const n of numbers){ if(n>10){ result=true; break; } }\nconsole.log(result);"
+    },
+    {
+      "id": 15,
+      "prompt": "Write the syntax for checking if all numbers in numbers are even.",
+      "answer": "numbers.every(n => n % 2 === 0)",
+      "explanation": "every() returns true if all elements pass the test.",
+      "codeSnippet": "// Equivalent using for loop\nconst numbers = [2,4,6];\nlet allEven = true;\nfor(const n of numbers){ if(n%2!==0){ allEven=false; break; } }\nconsole.log(allEven);"
+    },
+    {
+      "id": 16,
+      "prompt": "Write the syntax for checking if hobbies includes 'Cooking'.",
+      "answer": "hobbies.includes(\"Cooking\")",
+      "explanation": "includes() checks if an array contains a value.",
+      "codeSnippet": "// Equivalent using indexOf\nconst hobbies = [\"Sports\",\"Cooking\",\"Reading\"];\nconsole.log(hobbies.indexOf(\"Cooking\") !== -1);"
+    },
+    {
+      "id": 17,
+      "prompt": "Write the syntax for finding the first number greater than 10 in numbers.",
+      "answer": "numbers.find(n => n > 10)",
+      "explanation": "find() returns the first element that matches the condition.",
+      "codeSnippet": "// Equivalent using for loop\nconst numbers = [4,8,12,16];\nlet found;\nfor(const n of numbers){ if(n>10){ found=n; break; } }\nconsole.log(found);"
+    },
+    {
+      "id": 18,
+      "prompt": "Write the syntax for flattening a nested array one level deep.",
+      "answer": "nested.flat()",
+      "explanation": "flat() flattens nested arrays into a single array.",
+      "codeSnippet": "// Equivalent using concat and spread\nconst nested = [1,[2,3],[4]];\nconst flattened = [].concat(...nested);\nconsole.log(flattened);"
+    },
+    {
+      "id": 19,
+      "prompt": "Write the syntax for accessing the last element of numbers using at().",
+      "answer": "numbers.at(-1)",
+      "explanation": "at() allows negative indices to access from the end.",
+      "codeSnippet": "// Equivalent using length property\nconst numbers = [4,8,12,16];\nconsole.log(numbers[numbers.length-1]);"
+    },
+    {
+      "id": 20,
+      "prompt": "Write the syntax for creating a sorted copy of numbers without mutating the original.",
+      "answer": "numbers.toSorted()",
+      "explanation": "toSorted() returns a new sorted array, leaving the original unchanged.",
+      "codeSnippet": "// Equivalent using slice + sort\nconst numbers = [3,1,2];\nconst sorted = numbers.slice().sort();\nconsole.log(sorted);\nconsole.log(numbers);"
     }
   ]
 }

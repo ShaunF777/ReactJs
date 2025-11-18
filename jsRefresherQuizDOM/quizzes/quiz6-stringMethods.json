@@ -1,0 +1,75 @@
+{
+  "title": "Quiz 7 - String Methods",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Write the syntax for trimming whitespace from both ends of a string stored in text.",
+      "answer": "text.trim()",
+      "explanation": "trim() removes whitespace from the start and end of a string.",
+      "codeSnippet": "// Equivalent using regex\nconst text = \"   hello   \";\nconst trimmed = text.replace(/^\\s+|\\s+$/g, \"\");\nconsole.log(trimmed);"
+    },
+    {
+      "id": 2,
+      "prompt": "Write the syntax for converting a string stored in word to uppercase.",
+      "answer": "word.toUpperCase()",
+      "explanation": "toUpperCase() returns a new string with all characters in uppercase.",
+      "codeSnippet": "// Equivalent using manual loop\nconst word = \"hello\";\nlet upper = \"\";\nfor(const ch of word){ upper += ch.toLocaleUpperCase(); }\nconsole.log(upper);"
+    },
+    {
+      "id": 3,
+      "prompt": "Write the syntax for converting a string stored in word to lowercase.",
+      "answer": "word.toLowerCase()",
+      "explanation": "toLowerCase() returns a new string with all characters in lowercase.",
+      "codeSnippet": "// Equivalent using manual loop\nconst word = \"HELLO\";\nlet lower = \"\";\nfor(const ch of word){ lower += ch.toLocaleLowerCase(); }\nconsole.log(lower);"
+    },
+    {
+      "id": 4,
+      "prompt": "Write the syntax for splitting a string sentence into an array of words separated by spaces.",
+      "answer": "sentence.split(\" \")",
+      "explanation": "split() divides a string into an array based on a separator.",
+      "codeSnippet": "// Equivalent using regex match\nconst sentence = \"I love coding\";\nconst words = sentence.match(/\\S+/g);\nconsole.log(words);"
+    },
+    {
+      "id": 5,
+      "prompt": "Write the syntax for replacing the first occurrence of 'dog' with 'cat' in text.",
+      "answer": "text.replace(\"dog\", \"cat\")",
+      "explanation": "replace() substitutes the first match of a substring or regex.",
+      "codeSnippet": "// Equivalent using indexOf + slice\nconst text = \"dog and dog\";\nconst idx = text.indexOf(\"dog\");\nconst replaced = text.slice(0, idx) + \"cat\" + text.slice(idx+3);\nconsole.log(replaced);"
+    },
+    {
+      "id": 6,
+      "prompt": "Write the syntax for checking if text starts with 'Hello'.",
+      "answer": "text.startsWith(\"Hello\")",
+      "explanation": "startsWith() returns true if the string begins with the given substring.",
+      "codeSnippet": "// Equivalent using slice\nconst text = \"Hello world\";\nconsole.log(text.slice(0,5) === \"Hello\");"
+    },
+    {
+      "id": 7,
+      "prompt": "Write the syntax for checking if text ends with 'world'.",
+      "answer": "text.endsWith(\"world\")",
+      "explanation": "endsWith() returns true if the string ends with the given substring.",
+      "codeSnippet": "// Equivalent using slice\nconst text = \"Hello world\";\nconsole.log(text.slice(-5) === \"world\");"
+    },
+    {
+      "id": 8,
+      "prompt": "Write the syntax for repeating a string word 3 times.",
+      "answer": "word.repeat(3)",
+      "explanation": "repeat() returns a new string repeated the given number of times.",
+      "codeSnippet": "// Equivalent using loop\nconst word = \"Hi\";\nlet repeated = \"\";\nfor(let i=0;i<3;i++){ repeated += word; }\nconsole.log(repeated);"
+    },
+    {
+      "id": 9,
+      "prompt": "Write the syntax for checking if text includes 'code'.",
+      "answer": "text.includes(\"code\")",
+      "explanation": "includes() returns true if the substring is found.",
+      "codeSnippet": "// Equivalent using indexOf\nconst text = \"I love code\";\nconsole.log(text.indexOf(\"code\") !== -1);"
+    },
+    {
+      "id": 10,
+      "prompt": "Write the syntax for accessing the last character of text using at().",
+      "answer": "text.at(-1)",
+      "explanation": "at() allows negative indices to access characters from the end.",
+      "codeSnippet": "// Equivalent using length property\nconst text = \"Hello\";\nconsole.log(text[text.length-1]);"
+    }
+  ]
+}
