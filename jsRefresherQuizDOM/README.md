@@ -157,3 +157,32 @@ const isCorrect = normalized.toLowerCase() === q.answer.toLowerCase();
 - **quizBuilder.js**: Reusable DOM renderer, manages quiz state.
 - **quizN.json**: Quiz content, easy to duplicate and edit.
 This structure makes it simple to add new quizzes or change behavior by editing JSON or the builder logic.
+
+## Reusable prompt for creating new quiz.json files
+We are building a modular JavaScript Quiz Suite (quizN.json files) for learners. 
+Each quiz focuses on a specific ES6–ES16 concept (imports/exports, variables, functions, arrow functions, objects, classes, arrays, etc.).
+
+The JSON format is:
+```json
+{
+  "title": "Quiz N - Topic",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Question text...",
+      "answer": "expectedAnswer",
+      "explanation": "Explanation shown after answering.",
+      "codeSnippet": "// Optional runnable example code"
+    }
+  ]
+}
+```
+Important rules:
+- Prompts should ask for the correct syntax, but **must not give away the answer directly**.
+- Where possible, include a `codeSnippet` that demonstrates the same outcome using a different approach (e.g. loops, traditional functions, indexOf instead of findIndex). This way learners can run the snippet in the sandbox, see the result, and deduce the correct syntax themselves.
+- Answers must be exact strings (with correct spacing, punctuation, and special characters) so learners can type them precisely.
+- Explanations should be concise and beginner-friendly.
+- Code snippets should be runnable and show a console output that helps learners understand the concept.
+
+Please generate the next quiz JSON file (quizN.json) based on the transcript/code I provide, following these rules. 
+

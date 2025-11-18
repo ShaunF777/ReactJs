@@ -1,0 +1,82 @@
+{
+  "title": "Quiz 6 - Array Methods",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Write the syntax for creating an array with values 'Sports', 'Cooking', 'Reading'.",
+      "answer": "[\"Sports\", \"Cooking\", \"Reading\"]",
+      "explanation": "Arrays are created with square brackets and comma-separated values.",
+      "codeSnippet": "// Equivalent using individual variables\nconst hobby1 = \"Sports\";\nconst hobby2 = \"Cooking\";\nconst hobby3 = \"Reading\";\nconsole.log(hobby1, hobby2, hobby3);"
+    },
+    {
+      "id": 2,
+      "prompt": "How do you access the first element of the hobbies array?",
+      "answer": "hobbies[0]",
+      "explanation": "Array indices start at 0, so hobbies[0] is 'Sports'.",
+      "codeSnippet": "// Equivalent using destructuring\nconst hobbies = [\"Sports\", \"Cooking\", \"Reading\"];\nconst [first] = hobbies;\nconsole.log(first);"
+    },
+    {
+      "id": 3,
+      "prompt": "Which method adds 'Working' to the end of the hobbies array?",
+      "answer": "hobbies.push(\"Working\")",
+      "explanation": "push() appends a new element to the end of an array.",
+      "codeSnippet": "// Equivalent using spread operator\nlet hobbies = [\"Sports\", \"Cooking\", \"Reading\"];\nhobbies = [...hobbies, \"Working\"];\nconsole.log(hobbies);"
+    },
+    {
+      "id": 4,
+      "prompt": "Which method removes the last element from the numbers array?",
+      "answer": "numbers.pop()",
+      "explanation": "pop() removes the last element of an array.",
+      "codeSnippet": "// Equivalent using slice\nconst numbers = [4,8,12,16];\nconst shortened = numbers.slice(0, -1);\nconsole.log(shortened);"
+    },
+    {
+      "id": 5,
+      "prompt": "Which method removes the first element from the numbers array?",
+      "answer": "numbers.shift()",
+      "explanation": "shift() removes the first element of an array.",
+      "codeSnippet": "// Equivalent using slice\nconst numbers = [4,8,12,16];\nconst shortened = numbers.slice(1);\nconsole.log(shortened);"
+    },
+    {
+      "id": 6,
+      "prompt": "Which method adds 20 to the end of the numbers array?",
+      "answer": "numbers.push(20)",
+      "explanation": "push() appends a new element to the end.",
+      "codeSnippet": "// Equivalent using concat\nconst numbers = [4,8,12,16];\nconst extended = numbers.concat(20);\nconsole.log(extended);"
+    },
+    {
+      "id": 7,
+      "prompt": "Which method adds 2 to the beginning of the numbers array?",
+      "answer": "numbers.unshift(2)",
+      "explanation": "unshift() adds a new element to the front of an array.",
+      "codeSnippet": "// Equivalent using spread operator\nconst numbers = [4,8,12,16];\nconst extended = [2, ...numbers];\nconsole.log(extended);"
+    },
+    {
+      "id": 8,
+      "prompt": "Write the syntax for finding the index of 'Sports' in hobbies using findIndex with a function body.",
+      "answer": "hobbies.findIndex((item) => { return item === \"Sports\"; })",
+      "explanation": "findIndex executes the function for each item until it returns true.",
+      "codeSnippet": "// Equivalent using indexOf\nconst hobbies = [\"Sports\", \"Cooking\", \"Reading\", \"Working\"];\nconsole.log(hobbies.indexOf(\"Sports\"));"
+    },
+    {
+      "id": 9,
+      "prompt": "Write the shorter syntax for finding the index of 'Sports' in hobbies using findIndex.",
+      "answer": "hobbies.findIndex(item => item === \"Sports\")",
+      "explanation": "Arrow functions can omit braces and return for single expressions.",
+      "codeSnippet": "// Equivalent using for loop\nconst hobbies = [\"Sports\", \"Cooking\", \"Reading\", \"Working\"];\nlet idx = -1;\nfor(let i=0;i<hobbies.length;i++){\n  if(hobbies[i]===\"Sports\"){ idx=i; break; }\n}\nconsole.log(idx);"
+    },
+    {
+      "id": 10,
+      "prompt": "Write the syntax for mapping hobbies to a new array with an exclamation mark added to each item.",
+      "answer": "hobbies.map(item => item + \"!\")",
+      "explanation": "map() transforms each item and returns a new array.",
+      "codeSnippet": "// Equivalent using for loop\nconst hobbies = [\"Sports\", \"Cooking\", \"Reading\", \"Working\"];\nconst newhobbies = [];\nfor(const h of hobbies){ newhobbies.push(h+\"!\"); }\nconsole.log(newhobbies);"
+    },
+    {
+      "id": 11,
+      "prompt": "Write the syntax for mapping hobbies to a new array of objects with a text property.",
+      "answer": "hobbies.map(item => ({ text: item }))",
+      "explanation": "Wrap object literals in parentheses when returning implicitly from arrow functions.",
+      "codeSnippet": "// Equivalent using for loop\nconst hobbies = [\"Sports\", \"Cooking\", \"Reading\", \"Working\"];\nconst newobjects = [];\nfor(const h of hobbies){ newobjects.push({ text: h }); }\nconsole.log(newobjects);"
+    }
+  ]
+}

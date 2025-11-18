@@ -35,29 +35,38 @@ console.log(user1);
 user1.greet();*/
 
 /* Arrays/Lists come with many utility methods using object .notation
+Arrays can be mixed data types, and even have more arrays within them
 const hobbies = ["Sports", "Cooking", "Reading"];
-console.log(hobbies[0])
-hobbies.push("Working") 
-console.log(hobbies)
-const indreading = hobbies.findIndex((item) => {
-    return item === "Reading";
+console.log(hobbies[0]) //log array items by number "Sports"
+hobbies.push("Working") // add "Working" to the back at index 3
+console.log(hobbies) // should display all 4 items
+const index = hobbies.findIndex((item) => {
+    return item === "Sports"; // will go through hobbies, check if true & return index number 
 });
-console.log(indreading);
+console.log(index); // will log "0" for the index number ist found
+// this can also be written shorter
+const index2 = hobbies.findIndex(item => item === "Sports");
 
 const numbers = [4,8,12,16];
 console.log(numbers[3])
-numbers.push(20) // add to the back of list
-console.log(numbers)
+console.log(numbers) // logs 4, 8, 12, 16
 const ind4 = numbers.findIndex(item => item === 16);
-console.log(ind4);
+console.log(ind4); 
+numbers.pop() // remove the last item from the back of list
+numbers.shift() // remove the first item from the front of list
+numbers.push(20) // add to the back of list
+numbers.unshift(2) // add to the front of list
+console.log(numbers)
+console.log(ind4); // logs FALSE
 
-//map new list with additions to each value
-const newhobbies = hobbies.map(item => item + " for fun");
-console.log(newhobbies);
+//map new array with the additional "!" to each value
+const newhobbies = hobbies.map(item => item + "!");
+console.log(newhobbies); // logs Sports!, Cooking!, Reading!, Working!
 
-//map transforms into new list of key: value ojects 
+//map() can transform an array into new array of key:value ojects 
 const newobjects = hobbies.map(item => ({text: item}));
-console.log(newobjects); */
+console.log(newobjects); // logs 3 objects with key:value pairs
+*/
 
 /*
 // Destructuring syntax for arrays or lists
